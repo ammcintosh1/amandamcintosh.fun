@@ -1,6 +1,6 @@
 # amandamcintosh.fun
 ##  The personal website of Amanda McIntosh
-
+`
     .          -/OO\
     IP==-..       X/
    /PAAMMVVW-.~~  XXXX\\\
@@ -16,8 +16,8 @@
 _      \\\              ____ 
 =|       \X|X|          |==|
 =|-----------|----------|==|
+`
 
 
-
-##DEPENDENCIES
+## DEPENDENCIES
 
