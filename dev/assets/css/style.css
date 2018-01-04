@@ -1,0 +1,416 @@
+/*
+// AMANDAMCINTOSH.DESIGN
+// Last Updated on 12.31.17
+//
+// Pardon my dust, I'm still working on finishing this in my spare time!
+
+*/
+.hidden{
+  display: none;
+}
+
+.visible {
+  display: block
+}
+.container {
+  width: 75%;
+  margin: auto;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  overflow: hidden;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-end;
+
+  font-family: 'Quicksand', sans-serif
+}
+
+.body {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.header{
+  background: #333;
+  background-image: url('../img/forest.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 40vw
+}
+
+a {
+  text-decoration: none;
+  color: black
+}
+
+h1 {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  font-style: italic;
+  font-family: serif;
+}
+
+
+.socials img {
+  width: 2rem;
+  margin: 1rem .25rem;
+}
+
+.socials img:hover{
+  background-color: #CCEF60;
+  border-radius: 5px;
+  transition: all 100ms ease
+}
+.socials #github img:hover{
+  border-radius:40px;
+  transition: all 100ms ease
+}
+
+.socials img:active,
+.socials #github img:active {
+  background-color: #ffa977;
+}
+/*
+p::before {
+  width: 20%;
+  height: 200px;
+  position: absolute;
+  left: 5%;
+  content: " ";
+  background-image: url(../img/amandamcintosh.png);
+  background-repeat: no-repeat;
+  background-origin: padding-box;
+  background-size: contain;
+}
+*/
+p, span {
+  font-family: 'Quicksand', sans-serif;
+}
+
+#intro {
+/*
+  background: #CCEF60;
+  padding: 1rem;
+  padding-left: 20%;
+*/
+}
+
+span {
+  font-weight: 900;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+}
+header {
+  text-align: center
+}
+
+/* NAVIGATION */
+nav.main a {
+  border: 1px solid rgba(0,0,0,1);
+  padding: .24rem;
+}
+
+nav.secondary {
+  display: flex
+}
+
+nav.secondary a{
+  margin: 0 .25rem;
+  padding: 0 .25rem;
+  border-left: 1px solid rgba(0,0,0,1)
+}
+
+.dropdown {
+  display:none;
+
+  position: absolute;
+  background: white;
+  text-align: left;
+  margin-top: 0;
+  padding: 1rem;
+  transition: all 0.5s ease-in-out 3s;
+
+}
+.dropdown a {
+  display: block;
+  font-size: .75rem;
+}
+
+.link {
+  display: inline-block;
+  list-style: none;
+}
+
+.link:hover .dropdown,
+.dropdown:hover,
+.dropdown:focus{
+  display: block;
+  transition: all 0.5s ease-in-out 3s;
+}
+
+nav ul {
+  padding: 0
+}
+
+#download {
+  background: #E91E63;
+  color: white;
+  padding: 1rem;
+  display: block;
+  border-radius:10rem;
+  width: 30%;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+#download, #download:hover, #download:active {
+  transition: all 200ms ease;
+}
+
+
+#download:hover {
+  background: #ffa977;
+}
+
+#download:active {
+  background: #CCEF60;
+}
+
+.email {
+  text-align: center;
+}
+
+.pieces {
+  margin-top: 3rem;
+}
+
+.portfolio {
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  margin: 0;
+  padding-left:0
+}
+
+.portfolio img {
+  display: inline-block;
+  max-width: 30%;
+}
+
+.portfolio li {
+    flex: 1 auto;
+    width: 30%;
+    margin: .15rem;
+    list-style: none;
+    background: rgba(120,120,120,1);
+    text-align: center;
+  }
+
+.portfolio li.title-box{
+  color: white;
+}
+.portfolio li.title-box:nth-of-type(2n) {
+  width: 40%;
+}
+
+.portfolio li.title-box.logo-title {
+  background: white;
+  color: black;
+}
+.portfolio .piece{
+  list-style: none;
+  overflow: hidden;
+}
+.portfolio .piece a {
+  height: 100%;
+  width: 100%;
+
+}
+.portfolio .piece:hover h3{
+  background:rgba(0,0,0,.75);
+  transition: all .25s;
+}
+.portfolio .piece h3 {
+  margin: 0px;
+  padding: 2rem;
+  transition: all 2s;
+  background-color: rgba(0,0,0,.5);
+  color: #CCEF60;
+  height: 100%;
+}
+
+.proficiencies {
+  margin-left: 40%
+}
+
+
+@media screen and (min-width: 900px) {
+  .portfolio {
+    max-width: 700px;
+  }
+/*
+  p::before {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    margin-left: -250px;
+    margin-top: -2rem;
+    left: unset;
+    top: unset;
+  }
+*/
+  #intro {
+    max-width: 700px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 85%;
+  }
+
+  h1 {
+    order: -2;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+  }
+
+  #download {
+    order: -1;
+  }
+
+/*
+  p::before {
+    display: block;
+    width: 150px;
+    height: 150px;
+    background-size: 150%;
+    background-position: center top;
+    margin: -50px auto 2rem;
+    position: static;
+  }
+*/
+  #intro {
+    margin-top: 3rem;
+    padding: 2rem;
+  }
+  .socials {
+    order: 2;
+  }
+
+  span {
+    order: 3;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.projects {
+  width: 100%;
+  text-align: center;
+}
+
+
+.project, .piece {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.piece {
+  max-height: 200px;
+}
+.piece .img {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 100%;
+  overflow-x: hidden;
+}
+.piece .img img {
+    flex: 1;
+    width: 0;
+    margin: .125rem;
+}
+.piece .title {
+  width: 100%;
+  text-align: right;
+  font-size: .5rem;
+  margin: 0 0 2rem 0;
+}
+
+.company.expanded {
+  position: absolute;
+  top: 0;
+  left: 12.5%;
+  width: 75%;
+  background: rgba(255,255,255,.95);
+}
+
+.close {
+  position: fixed;
+  top: 5%;
+  right: 5%;
+}
+
+.company.condensed {
+    width: 20vw;
+    height: 20vw;
+    background: #CCC;
+    overflow: hidden;
+    margin: auto;
+    display: inline-block;
+    text-align: center;
+}
+
+.company.condensed h2,
+.company.condensed .description {
+  display: none
+}
+
+.company.condensed .project {
+  width: 200%;
+  margin-left: -50%;
+  transition: all 1s;
+}
+
+.company.condensed:hover .project{
+  transition: all 1s;
+  cursor: pointer;
+}
+
+.tags {
+  display: none;
+}
+
+.portfolio li.logos {
+  width: 100%;
+  background: white;
+}
+
+
+.logos img {
+  height: 10vw;
+  padding: 1rem;
+}
