@@ -1,6 +1,6 @@
 /*
 // AMANDAMCINTOSH.DESIGN
-// Last Updated on 12.31.17
+// Last Updated on 1.27.18
 //
 // Pardon my dust, I'm still working on finishing this in my spare time!
 
@@ -12,6 +12,62 @@
 .visible {
   display: block
 }
+/* ===================== */
+/*
+PAGE-SPECIFIC
+== Home Page ==
+*/
+
+.home .container,
+.home .container > *{
+  width: 100%;
+}
+
+.feature {
+  height: 40%;
+  min-height: 200px;
+  max-height: 600px;
+
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+  align-content: flex-end;
+  padding: 1rem;
+  padding-top: 5rem;
+
+  background: #CCC;
+
+  font-size:14px;
+  text-align: left;
+}
+
+.feature p,
+.feature h1{
+  padding: 0;
+  margin: .125rem;
+}
+
+.feature nav {
+  position: absolute;
+  right: 0;
+  margin-right: 1rem;
+}
+
+.feature .dropdown {
+    position: absolute;
+    background: #fff;
+    left: 0;
+    width: 100%;
+    text-align: left;
+    padding: 0;
+    transition: all .5s ease-in-out 3s;
+}
+
+.home .content {
+  background: #DDD;
+}
+/* ===================== */
 .container {
   width: 75%;
   margin: auto;
@@ -51,20 +107,17 @@ a {
 }
 
 h1 {
-  width: 100%;
   margin: 0;
   text-align: center;
-  font-style: italic;
-  font-family: serif;
 }
 
 
-.socials img {
+.socials svg {
   width: 2rem;
   margin: 1rem .25rem;
 }
 
-.socials img:hover{
+.socials svg:hover{
   background-color: #CCEF60;
   border-radius: 5px;
   transition: all 100ms ease

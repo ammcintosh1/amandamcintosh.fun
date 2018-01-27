@@ -1,0 +1,5 @@
+.git/*
+build
+dev/assets/img/portfolio
+node_modules
+
