@@ -4,6 +4,11 @@
 //
 // Pardon my dust, I'm still working on finishing this in my spare time!
 
+// BREAKPOINTS:
+// 650px - Medium
+// 500px - Small
+// 350px - X-Small
+
 */
 .hidden{
   display: none;
@@ -67,6 +72,88 @@ PAGE-SPECIFIC
 .home .content {
   background: #DDD;
 }
+
+/* MEDIUM */
+@media (max-width:650px){
+  .feature header {
+    text-align: left;
+  }
+  .feature nav {
+    position: static;
+  }
+  .feature .link:hover .dropdown,
+  .feature .dropdown:hover,
+  .feature .dropdown:focus{
+    position: relative;
+    width: auto;
+    margin-top: -.4rem;
+    display: inline-block;
+    vertical-align: top;
+  }
+}
+@media screen and (max-width: 500px) {
+  .container {
+    width: 85%;
+  }
+  .feature {
+    text-align: center;
+    align-items: center;
+  }
+  .socials {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+  }
+
+  header {
+    order: 5;
+  }
+
+  #download {
+    order: -1;
+  }
+
+/*
+  p::before {
+    display: block;
+    width: 150px;
+    height: 150px;
+    background-size: 150%;
+    background-position: center top;
+    margin: -50px auto 2rem;
+    position: static;
+  }
+*/
+  #intro {
+    margin-top: 3rem;
+    padding: 2rem;
+  }
+  .socials {
+    order: 2;
+  }
+
+  span {
+    order: 3;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* X-SMALL */
+@media (max-width:400px){
+  .feature nav {
+    position: static;
+  }
+}
+
 /* ===================== */
 .container {
   width: 75%;
@@ -328,48 +415,6 @@ nav ul {
 */
   #intro {
     max-width: 700px;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .container {
-    width: 85%;
-  }
-
-  h1 {
-    order: -2;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    margin-top: 1rem;
-  }
-
-  #download {
-    order: -1;
-  }
-
-/*
-  p::before {
-    display: block;
-    width: 150px;
-    height: 150px;
-    background-size: 150%;
-    background-position: center top;
-    margin: -50px auto 2rem;
-    position: static;
-  }
-*/
-  #intro {
-    margin-top: 3rem;
-    padding: 2rem;
-  }
-  .socials {
-    order: 2;
-  }
-
-  span {
-    order: 3;
-    width: 100%;
-    text-align: center;
   }
 }
 
