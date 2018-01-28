@@ -30,7 +30,7 @@ PAGE-SPECIFIC
 
 .feature {
   height: 40%;
-  min-height: 200px;
+  min-height: 300px;
   max-height: 600px;
 
   display: flex;
@@ -90,17 +90,15 @@ PAGE-SPECIFIC
     transition: all .5s ease-in-out 3s;
 }
 .feature .socials svg * {
-  fill: #FFF;
-  stroke: #000
+  stroke: #FFF
 }
 .feature .socials svg:hover * {
-  fill: #000;
-  stroke: #FFF;
+  fill: #FFF;
+  stroke: #000;
 }
 .home .content {
   background: #DDD;
-  font-size: 14px;
-  border-top: 4px solid #ff9b80;
+  font-size: 12px;
 }
 .home .intro {
 /*
