@@ -2,7 +2,8 @@
 layout: home.hbs
 
 title: Amanda McIntosh
-summary: Designer/Developer based in San Diego, CA
+splash: Looking for some fresh talent?
+summary: Talented Freelance Designer/Devloper in San Diego, CA
 email: am.mcintosh1@gmail.com
 
 description: I’ve worked as a designer/illustrator for 5 years. I am flexible and fresh, with a keen eye for good design. My style is clean and bold, with subtle textures and strong typography. I enjoy exploring new mediums and techniques. My projects range from illustration and app development, to product photography and identity development.
@@ -14,6 +15,62 @@ description: I’ve worked as a designer/illustrator for 5 years. I am flexible 
   <button class="cta">Send Email</button>
 </div>
 -->
+
+<div class="work">
+<!--Note-to-self - this guy is designed to only work with three tabs right now.
+  TODO:
+   - Make swipable/touch-friendly
+   - Make flexible with piece numbers
+ -->
+  <ul class="tabber">
+    <li>
+      <a href="#web_design" class="focused">Web Design</a>
+      <a href="#identity">Identity</a>
+      <a href="#print">Print</a>
+    </li>
+  </ul>
+  <div class="tab-container">
+    <div class="tab active" id="web_design">
+      <div class="piece">
+        <a href=""><img src="" alt="" class="logo"></a>
+      </div>
+
+      <div class="piece">
+        <a href=""><img src="" alt="" class="logo"></a>
+      </div>
+
+      <div class="piece">
+        <a href=""><img src="" alt="" class="logo"></a>
+      </div>
+    </div>
+    <div class="tab" id="identity">
+      <div class="piece">
+        <a href=""><img src="" alt="" class="logo"></a>
+      </div>
+
+      <div class="piece">
+        <a href=""><img src="" alt="" class="logo"></a>
+      </div>
+
+      <div class="piece">
+        <a href=""><img src="" alt="" class="logo"></a>
+      </div>
+    </div>
+    <div class="tab" id="print">
+      <div class="piece">
+        <a href=""><img src="" alt="" class="logo"></a>
+      </div>
+
+      <div class="piece">
+        <a href=""><img src="" alt="" class="logo"></a>
+      </div>
+
+      <div class="piece">
+        <a href=""><img src="" alt="" class="logo"></a>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="main">
   <img src="img/amandamcintosh.png" id="me">
   <p id="intro">{{description}}</p>

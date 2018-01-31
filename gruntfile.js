@@ -46,6 +46,19 @@ module.exports = function (grunt) {
         }
       }
     },
+    postcss: {
+      optins: {
+        map: true,
+        processors: [
+          require('pixrem')(),
+          require('autoprefixer')({browsers: 'last 2 versions'}),
+          require('cssnano')()
+        ]
+      },
+      dist: {
+        src: 'build/css/*.css'
+      }
+    },
     copy: {
       main:{
         files: [
@@ -67,18 +80,19 @@ module.exports = function (grunt) {
       },
       build: {
         files: ['dev/**/*'],
-        tasks: ['assemble', 'clean', 'sass', 'copy', 'cssmin']
+        tasks: ['assemble', 'clean', 'sass', 'copy', 'cssmin','postcss']
       }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
 
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-postcss');
 
   grunt.loadNpmTasks('grunt-serve');
 
@@ -91,5 +105,5 @@ module.exports = function (grunt) {
   // (2) Cleans up previous build folder
   // (3)copies built site into build
 
-  grunt.registerTask('default', ['assemble', 'clean', 'sass', 'copy', 'cssmin', 'watch'])
+  grunt.registerTask('default', ['assemble', 'clean', 'sass',  'copy', 'cssmin','postcss', 'watch'])
 }

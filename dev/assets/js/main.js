@@ -1,6 +1,55 @@
+// Simple TABBER
+// written on 1.31.18
+
+let tabControl = $('.tabber')
+let tabLinks = $('.tabber a')
+let tabContainer = $('.tabber + .tab-container')
+let activeTab = getActiveTab(tabContainer)
+let tabs = setUpTabs()
+let firstTab = tabs[0]
+
+function setUpTabs(){
+  let all = tabContainer.children('.tab')
+  console.log(all)
+
+  all.each(function(i, e){
+    e = $(e)
+    e.css('left', 100*i+'%')
+  })
+  return all;
+}
+
+function getActiveTab(container){
+  let active = container.children('.active')
+  return active.attr('id')
+}
+
+tabLinks.each(function(i, e){
+  e = $(e)
+
+  let link = e.attr('href')
+  let tab = tabContainer.children(link)
+
+  e.on('click', function(f){
+    console.log(tabs[i])
+
+    f.preventDefault();
+    $('.active').removeClass('active')
+    $('.focused').removeClass('focused')
+    tab.addClass('active')
+    e.addClass('focused')
+
+    $(tabs).each(function(k,g){
+      $(g).css('left',(k-i)*100+'%')
+    })
+  })
+})
+
+
+
+
 $(document).ready(function () {
   var form = $('form');
-
 
 
   form.on('submit', function (e) {
