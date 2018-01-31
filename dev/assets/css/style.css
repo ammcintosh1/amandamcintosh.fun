@@ -42,7 +42,7 @@ PAGE-SPECIFIC
   padding-top: 5rem;
 
   background: #CCC;
-  background-image: url(../img/background.png);
+  background-image: url(../img/background.jpg);
   background-size: cover;
   background-position: left center;
 
@@ -123,6 +123,39 @@ PAGE-SPECIFIC
 .home .piece {
   height: 100px;
 }
+.home .main {
+  padding: 0 2rem;
+}
+.home #me {
+  width:120px;
+  margin: 1rem auto 0;
+  text-align:center;
+  display: block
+}
+.proficiencies {
+  margin: auto;
+  width: 50%;
+  min-width: 300px;
+  max-width: 500px;
+  text-align: center;
+}
+
+.proficiencies ul{
+  padding: 0
+}
+.proficiencies li{
+  display: inline-block;
+  border: 1px solid black;
+  padding: .5rem;
+  margin-top: .5rem;
+}
+/* LARGE */
+@media (max-width: 900px){
+  #intro {
+    max-width: 500px;
+    margin: auto
+  }
+}
 /* MEDIUM */
 @media (max-width:650px){
   .feature header {
@@ -151,7 +184,7 @@ PAGE-SPECIFIC
   }
   .socials {
     position: absolute;
-    top: 0;
+    top: 5rem;
     left: 0;
     width: 100%;
     text-align: center;
@@ -183,8 +216,8 @@ PAGE-SPECIFIC
   }
 */
   #intro {
-    margin-top: 3rem;
-    padding: 2rem;
+    margin-top: .5rem;
+    padding: .5rem;
   }
   .socials {
     order: 2;
@@ -430,10 +463,6 @@ nav ul {
   height: 100%;
 }
 
-.proficiencies {
-  margin-left: 40%
-}
-
 
 @media screen and (min-width: 900px) {
   .portfolio {
@@ -452,6 +481,16 @@ nav ul {
 */
   #intro {
     max-width: 700px;
+    margin: auto;
+  }
+
+  .home #me {
+    float: left;
+    width: 200px;
+    margin-right: 2rem
+  }
+  .proficiencies {
+    text-align: left
   }
 }
 
