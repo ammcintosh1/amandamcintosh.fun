@@ -14,23 +14,34 @@ Almost-black: #110300 rgb(17,3,0)
 Dark grey: #344238
 Darker grey: #1e3026
 */
+
+$light-green:  #c8db77;
+$black: #110300;
+$dark-grey: #344238;
+$darker-grey: #1e3026;
+
 /* ============== */
 /* UTILITIES */
 /* ============== */
+
+
 /* ============== */
 /* LAYOUT
 /* ============== */
+
 /* ============== */
 /* NAVIGATION
 /* ============== */
 nav {
-  background: #c8db77; }
-  nav a {
-    border: 1px solid black;
-    padding: .24rem; }
+  background: $light-green;
+
+  a {
+    border: 1px solid rgba(0,0,0,1);
+    padding: .24rem;
+  }
+}
 
 /* ============== */
 /* PAGE: HOME
 /* ============== */
 
-/*# sourceMappingURL=style.css.map */

@@ -24,6 +24,17 @@ module.exports = function (grunt) {
         dest: 'dev/site/'
       }
     },
+    sass: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'dev/assets/css/scss',
+          src: ['*.scss'],
+          dest: 'dev/assets/css',
+          ext: '.css'
+        }]
+      }
+    },
     cssmin: {
       options: {
       shorthandCompacting: false,
@@ -31,7 +42,7 @@ module.exports = function (grunt) {
       },
       combine: {
         files: {
-          'build/css/style.min.css': ['dev/assets/css/*']
+          'build/css/style.min.css': ['dev/assets/css/*.css']
         }
       }
     },
@@ -56,7 +67,7 @@ module.exports = function (grunt) {
       },
       build: {
         files: ['dev/**/*'],
-        tasks: ['assemble', 'clean', 'copy', 'cssmin']
+        tasks: ['assemble', 'clean', 'sass', 'copy', 'cssmin']
       }
     }
   });
@@ -80,5 +91,5 @@ module.exports = function (grunt) {
   // (2) Cleans up previous build folder
   // (3)copies built site into build
 
-  grunt.registerTask('default', ['assemble', 'clean', 'copy', 'cssmin', 'watch'])
+  grunt.registerTask('default', ['assemble', 'clean', 'sass', 'copy', 'cssmin', 'watch'])
 }
