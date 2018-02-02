@@ -72,15 +72,24 @@ header {
   header strong {
     text-transform: lowercase; }
   header .nav-contact {
-    top: 2rem;
+    padding: .354rem .5rem;
     position: absolute;
-    text-align: center; }
+    top: 2rem;
+    text-align: center;
+    background: #344238;
+    color: white;
+    font-size: .707rem;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center; }
   header .socials {
-    border-top: 1px solid white;
-    margin-top: .354rem;
-    padding-top: .354rem; }
+    border-right: 1px solid white;
+    margin-right: .354rem;
+    padding-right: .354rem;
+    order: -1; }
     header .socials svg {
-      width: 2rem;
+      width: 1rem;
       margin: .25rem; }
     header .socials svg * {
       stroke: #FFF; }
@@ -104,20 +113,12 @@ header {
     display: inline-block; }
   header nav .dropdown {
     display: none; }
-  header .nav-contact {
-    padding: .354rem .5rem;
-    position: absolute;
-    background: #344238;
-    color: white;
-    font-size: .707rem; }
 
 /* ============== */
 /* PAGE: HOME
 /* ============== */
 .feature {
-  height: 50%;
-  min-height: 300px;
-  max-height: 600px;
+  min-height: 85vh;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -148,7 +149,13 @@ header {
   .tabber a {
     color: #110300;
     margin: 1rem .354rem;
-    font-size: 1rem; }
+    font-size: 1rem;
+    vertical-align: bottom;
+    border-bottom: 2px solid rgba(200, 200, 200, 0);
+    transition: all .5s linear; }
+    .tabber a:hover {
+      border-color: #c8c8c8;
+      animation: text-pulse .5s infinite .5s ease-in-out alternate; }
     .tabber a.focused {
       border-bottom: 2px solid #110300; }
 
@@ -157,7 +164,6 @@ header {
   width: 75%;
   height: 300px;
   margin: auto;
-  border: 1px solid black;
   overflow: hidden; }
 
 .tab {
@@ -170,13 +176,118 @@ header {
   height: 100%;
   transition: left .5s ease-in; }
   .tab .piece {
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-    justify-content: center;
     width: 20vw;
     height: 20vw;
     margin: .354rem;
-    border: 1px solid black; }
+    border: 1px solid black;
+    background: grey; }
+    .tab .piece a {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      justify-content: center;
+      text-align: center; }
+    .tab .piece img {
+      width: 50%; }
+
+.me {
+  background: #DDDDDD; }
+  .me .photo {
+    width: 120px;
+    margin: 1rem auto 0;
+    text-align: center;
+    display: block; }
+  .me #intro {
+    max-width: 500px;
+    margin: auto; }
+  .me .proficiencies {
+    margin: auto;
+    width: 50%;
+    min-width: 300px;
+    max-width: 500px;
+    text-align: center; }
+  .me .proficiencies ul {
+    padding: 0; }
+  .me .proficiencies li {
+    display: inline-block;
+    border: 1px solid black;
+    padding: .5rem;
+    margin-top: .5rem; }
+
+.portfolio, .contact {
+  min-height: 200px; }
+
+.portfolio {
+  background: #344238;
+  color: white; }
+
+.contact {
+  display: flex;
+  flex-flow: row;
+  background: #1e3026;
+  color: white; }
+  .contact > div {
+    flex: 1; }
+  .contact .form {
+    background: #110300; }
+
+.footer {
+  height: 70px;
+  background: #110300; }
+
+/* ============== */
+/* PAGE: WORK
+/* ============== */
+.listing {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center; }
+  .listing .link {
+    flex: auto 30%;
+    width: 20vw;
+    height: 20vw;
+    border: 1px solid black;
+    background: #DDDDDD; }
+  .listing a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%; }
+  .listing img {
+    max-width: 75%;
+    max-height: 40%; }
+
+.project {
+  display: none;
+  width: 75%;
+  margin: auto;
+  clear: both; }
+  .project.open {
+    display: block; }
+  .project h2 {
+    font-size: 2.5rem;
+    margin: 2rem 0 .5rem;
+    font-weight: 400; }
+  .project h3 {
+    border-top: 1px solid black;
+    padding-top: .5rem;
+    margin-bottom: 1rem; }
+  .project p {
+    float: left;
+    width: 60%; }
+  .project img {
+    max-width: 100%; }
+
+/* ============== */
+/* ANIMATIONS
+/* ============== */
+@keyframes text-pulse {
+  0% {
+    border-color: #c8c8c8; }
+  100% {
+    border-color: #c8db77; } }
 
 /*# sourceMappingURL=style.css.map */

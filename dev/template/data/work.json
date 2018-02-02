@@ -2,18 +2,18 @@
   "projects": [{
     "id":"paracosm",
     "company": "Paracosm",
-    "logo": "",
+    "logo": "paracosm.png",
     "summary": "Project: develop sales & support material for PX-80.",
     "tools": "Adobe Creative Suite",
     "website": "paracosm.io",
     "description": "Working as part of a small in-house design team, I filled multiple roles as-needed. As we relied heavily on HubSpot for our sales pipeline, I designed and built numerous landing pages, forms, and emails using HubSpot's CMS. Additional projects included printed materials, customs icons, HubSpot/Google integrations and product photography.",
     "piece": [
-      {"title":"title","work":"url/for/work.png"},{"title":"title","work":"url/for/work.png"},{"title":"title","work":"url/for/work.png"}
+      {"title":"Product page mockups","work":"paracosm-1.jpg"},{"title":"Product photographs & spec sheet","work":"paracosm-2.jpg"},{"title":"title","work":"paracosm-3.jpg"}
       ]
     }, {
     "id":"verigo",
     "company": "Verigo",
-    "logo": "",
+    "logo": "verigo.png",
     "summary": "Project: develop sales & support material for PX-80.",
     "tools": "Adobe Creative Suite",
     "website": "verigo.io",
@@ -24,7 +24,7 @@
     }, {
     "id":"artalivedesign",
     "company": "Art Alive Design",
-    "logo": "",
+    "logo": "artalivedesign.png",
     "summary": "Project: develop sales & support material for PX-80.",
     "tools": "Adobe Creative Suite",
     "website": "verigo.io",

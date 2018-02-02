@@ -17,14 +17,14 @@
 <div class="listing">
   {{#each work.projects}}
   <div class="link">
-    <a href="#{{id}}">{{logo}}</a>
+    <a href="#{{id}}"><img src="img/logos/{{logo}}"></a>
   </div>
   {{/each}}
 </div>
 
 
 {{#each work.projects}}
-<div id="#{{id}}" class="project">
+<div id="{{id}}" class="project open">
   <div class="summary">
     <h2>{{company}}</h2>
     <section class="description">
@@ -37,10 +37,7 @@
   <div class="content">
     {{#each piece}}
     <div class="piece">
-    {{#if title}}
-    <span>{{title}}</span>
-    {{/if}}
-    <img src="{{work}}">
+    <img src="img/portfolio/web/{{work}}">
     </div>
     {{/each}}
   </div>
