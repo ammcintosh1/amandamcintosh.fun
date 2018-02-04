@@ -71,6 +71,9 @@ header {
   padding: .354rem; }
   header strong {
     text-transform: lowercase; }
+    @media screen and (max-width: 650px) {
+      header strong {
+        display: block; } }
   header .nav-contact {
     padding: .354rem .5rem;
     position: absolute;
@@ -83,11 +86,23 @@ header {
     flex-flow: row;
     align-items: center;
     justify-content: center; }
+    @media screen and (max-width: 500px) {
+      header .nav-contact {
+        order: 1; } }
   header .socials {
     border-right: 1px solid white;
     margin-right: .354rem;
     padding-right: .354rem;
     order: -1; }
+    header .socials .triangle {
+      width: 0px;
+      height: 0px;
+      display: block;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid #344238;
+      margin-top: -14px;
+      position: absolute; }
     header .socials svg {
       width: 1rem;
       margin: .25rem; }
@@ -113,6 +128,13 @@ header {
     display: inline-block; }
   header nav .dropdown {
     display: none; }
+  @media screen and (max-width: 500px) {
+    header {
+      flex-flow: row wrap; }
+      header .nav-info, header .nav-contact, header nav {
+        position: static;
+        width: 100%;
+        text-align: center; } }
 
 /* ============== */
 /* PAGE: HOME
@@ -140,8 +162,7 @@ header {
   margin: .125rem; }
 
 .work {
-  width: 100%;
-  padding-top: 1.414rem; }
+  width: 100%; }
 
 .tabber {
   margin-bottom: 1rem;
@@ -234,12 +255,31 @@ header {
     background: #110300; }
 
 .footer {
-  height: 70px;
-  background: #110300; }
+  background: #110300;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  padding: 2rem 0; }
+
+.contact-button {
+  font-family: 'Quicksand';
+  font-weight: 500;
+  text-shadow: none;
+  border: 0;
+  background: #c8db77;
+  color: #110300;
+  padding: .707rem 1.414rem;
+  margin: 1.414rem; }
 
 /* ============== */
 /* PAGE: WORK
 /* ============== */
+.work h1, .work h2 {
+  text-align: center; }
+
 .listing {
   display: flex;
   flex-flow: row wrap;
@@ -280,6 +320,23 @@ header {
     width: 60%; }
   .project img {
     max-width: 100%; }
+
+.logos {
+  width: 75%;
+  margin: auto;
+  text-align: center; }
+  .logos img {
+    max-width: 200px;
+    max-height: 100px;
+    padding: 20px;
+    margin: .125rem;
+    margin-right: 0;
+    border: solid 1px black;
+    transition: all .5s ease-in; }
+    .logos img:hover {
+      max-width: 225px;
+      max-height: 115px;
+      transition: all .5s ease-in; }
 
 /* ============== */
 /* ANIMATIONS

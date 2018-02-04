@@ -1,3 +1,22 @@
+// Background Loader
+// Do research on how to actually do this correctly, pls!
+$(document).ready(function(){
+  $('.feature').css('background-image', 'url(./img/background.jpg)')
+})
+
+// Portfolio Trigger
+// written on 2.2.18
+
+$('.listing .link a').on('click', function(e){
+  console.log(e)
+  e.preventDefault()
+
+  let id = $(this).attr('href')
+    console.log(id)
+
+  $('.open').removeClass('open')
+  $('.project'+id).addClass('open')
+})
 // Simple TABBER
 // written on 1.31.18
 

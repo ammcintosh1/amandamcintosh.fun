@@ -24,6 +24,10 @@ Ratio based on the augmented fourth ratio:
 .5
 .354
 */
+$large: 900px;
+$medium: 650px;
+$small: 500px;
+$xsmall: 350px;
 
 $light-green:  #c8db77;
 $dark-grey: #344238;
@@ -89,17 +93,21 @@ header {
   flex-flow: row;
   justify-content: space-between;
   align-items: center;
-
   background: $light-green;
-
   padding: .354rem;
 
   strong {
     text-transform: lowercase;
+    @media screen and (max-width: $medium){
+      display:block
+    }
   }
 
   // Nav Contact
   .nav-contact {
+    @media screen and (max-width: $small){
+      order: 1;
+    }
     padding: .354rem .5rem;
     position: absolute;
     top: 2rem;
@@ -121,6 +129,16 @@ header {
     padding-right: .354rem;
     order: -1;
 
+    .triangle {
+      width: 0px;
+      height: 0px;
+      display: block;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid $dark-grey;
+      margin-top: -14px;
+      position: absolute;
+    }
     // RESPONSIFY:
     //border-top: 1px solid white;
     //margin-top: .354rem;
@@ -171,6 +189,15 @@ header {
       display: none
     }
   }
+
+    @media screen and (max-width: $small) {
+    flex-flow: row wrap;
+    .nav-info, .nav-contact, nav {
+      position: static;
+      width: 100%;
+      text-align: center;
+    }
+  }
 }
 
 /* ============== */
@@ -205,9 +232,9 @@ header {
 
 
 // TABBER
+//Page: Work
 .work {
   width: 100%;
-  padding-top: 1.414rem
 }
 
 .tabber {
@@ -339,14 +366,36 @@ header {
 }
 
 .footer {
-  height: 70px;
   background: $black;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  padding: 2rem 0;
+
 }
 
+  .contact-button {
+    font-family: 'Quicksand';
+    font-weight: 500;
+    text-shadow: none;
+    border: 0;
+    background: $light-green;
+    color: $black;
+    padding: .707rem 1.414rem;
+    margin: 1.414rem;
+  }
 
 /* ============== */
 /* PAGE: WORK
 /* ============== */
+.work {
+  h1, h2 {
+    text-align: center
+  }
+}
 .listing {
   display: flex;
   flex-flow: row wrap;
@@ -371,6 +420,7 @@ header {
   }
 }
 
+
 .project {
   display: none;
   width: 75%;
@@ -380,6 +430,7 @@ header {
   &.open {
     display: block;
   }
+
   h2 {
     font-size: 2.5rem;
     margin: 2rem 0 .5rem;
@@ -399,7 +450,27 @@ header {
   }
 }
 
+.logos {
+  width: 75%;
+  margin: auto;
+  text-align: center;
 
+  img {
+    max-width: 200px;
+    max-height: 100px;
+    padding: 20px;
+    margin: .125rem;
+    margin-right: 0;
+    border: solid 1px black;
+    transition: all .5s ease-in;
+
+    &:hover{
+      max-width: 225px;
+      max-height: 115px;
+      transition: all .5s ease-in;
+    }
+  }
+}
 /* ============== */
 /* ANIMATIONS
 /* ============== */
