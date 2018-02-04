@@ -1,103 +1,50 @@
 --- examples: customs: variabless: - ones - twos - threes ---
 <section class="projects">
   <h1>Projects</h1>
+<!--
 
+{
+  "company": "test3",
+  "logo": "",
+  "subtitle": "logo.png",
+  "summary": "Adobe Creative Suite",
+  "website": "Description of the work",
+  "description": "<div>testtest</div>",
+  "content": ""
+}
+-->
 
-
-  <div class="company">
-    <h2>Paracosm</h2>
-      <section class="description">
-        <h3>Project: develop sales & support material for PX-80.</h3>
-        <h4><a href="www.paracosm.io" target="_blank">paracosm.io</a></h4>
-        <p>Working as part of a small in-house design team, I filled multiple roles as-needed. As we relied heavily on HubSpot for our sales pipeline, I designed and built numerous landing pages, forms, and emails using HubSpot's CMS. Additional projects included printed materials, customs icons, HubSpot/Google integrations and product photography.</p>
-      </section>
-
-    <div class="project">
-      <div class="piece">
-        <div class="img">
-          <img src="img/portfolio/px80.png" alt="">
-        </div>
-        <p class="title">Product Photography | 2016</p>
-      </div>
-
-      <div class="piece">
-        <div class="img">
-          <img src="img/portfolio/order-page.png" alt="">
-
-          <img src="img/portfolio/order-form.png" alt="">
-        </div>
-
-        <p class="title">HubSpot LP & Order Form | 2017</p>
-      </div>
-    </div>
-
-    <div class="project">
-    <h3>Other Pieces Designed for Paracosm</h3>
-
-    <div class="piece">
-    <div class="img">
-    <img src="img/portfolio/icons.png" alt="">
-    </div>
-    <p class="title">Custom Icons | 2015 - 2016</p>
-    </div>
-
-      <div class="piece">
-        <div class="img">
-          <img src="img/portfolio/fliers.png" alt="">
-          <p class="title">Product spec sheet | 2016</p>
-        </div>
-      </div>
-    </div>
-
+<div class="listing">
+  {{#each work.projects}}
+  <div class="link">
+    <a href="#{{id}}"><img src="img/logos/{{logo}}"></a>
   </div>
+  {{/each}}
+</div>
 
-  <!--======-->
-
-  <div class="company">
-      <h2>Verigo</h2>
+   <marquee>
+      color me beautiful
+   </marquee>
+{{#each work.projects}}
+<div id="{{id}}" class="project">
+  <div class="summary">
+    <h2>{{company}}</h2>
     <section class="description">
-      <h4><a href="www.verigo.io" target="_blank">verigo.io</a></h4>
-      <p>Verigo needed website maitenance as well as additional pages re-designed and developed. Working in-person with their team, I utilized their pre-existing web platform and styling to create a new home-page. I also designed custom icons and shot product photos.</p>
+      <h3>{{summary}}</h3>
+      {{#if website}}
+      <h4>{{website}}</h4>{{/if}}
+      <p>{{description}}</p>
     </section>
-    <div class="project">
-      <div class="piece">
-        <div class="img">
-          <img src="img/portfolio/verigo-screenshot-1.png" alt="">
-        </div>
-      </div>
-      <hr>
-      <div class="piece">
-        <div class="img">
-          <img src="img/portfolio/pod-img.png" alt="">
-
-          <img src="img/portfolio/pod-go-img.png" alt="">
-
-          <img src="img/portfolio/pod-rh-img.png" alt="">
-        </div>
-        <p class="title">Product Images</p>
-      </div>
-
-    </div>
   </div>
-
-<!--======-->
-
-  <div class="company">
-    <h2>Art Alive Design</h2>
-     <section class="description">
-      <p>As a personal project, I worked on a design for a freelance web design business. I started with a mobile design and expanded it to a desktop design while maintaining the same user experience. The design features prominent, invited CTAs intended to efficiently funnel the user into the sales pipeline. This is project is a work-in-progress; I hope to complete development side of things soon!</p>
-    </section>
-      <div class="project">
-      <div class="piece">
-        <div class="img">
-          <img src="img/portfolio/portfolio_site_mobile.png" alt="">
-
-          <img src="img/portfolio/website_mockup.png" alt="">
-
-        </div>
-        <p class="title">Product Images</p>
-      </div>
-
+  <div class="content">
+    {{#each piece}}
+    <div class="piece">
+    <img src="img/portfolio/web/{{work}}">
     </div>
+    {{/each}}
   </div>
+</div>
+{{/each}}
+
+
 </section>

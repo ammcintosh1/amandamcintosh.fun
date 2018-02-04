@@ -24,6 +24,17 @@ module.exports = function (grunt) {
         dest: 'dev/site/'
       }
     },
+    sass: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: 'dev/assets/css/scss',
+          src: ['*.scss'],
+          dest: 'dev/assets/css',
+          ext: '.css'
+        }]
+      }
+    },
     cssmin: {
       options: {
       shorthandCompacting: false,
@@ -31,8 +42,21 @@ module.exports = function (grunt) {
       },
       combine: {
         files: {
-          'build/css/style.min.css': ['dev/assets/css/*']
+          'build/css/style.min.css': ['dev/assets/css/*.css']
         }
+      }
+    },
+    postcss: {
+      optins: {
+        map: true,
+        processors: [
+          require('pixrem')(),
+          require('autoprefixer')({browsers: 'last 2 versions'}),
+          require('cssnano')()
+        ]
+      },
+      dist: {
+        src: 'build/css/*.css'
       }
     },
     copy: {
@@ -56,18 +80,19 @@ module.exports = function (grunt) {
       },
       build: {
         files: ['dev/**/*'],
-        tasks: ['assemble', 'clean', 'copy', 'cssmin']
+        tasks: ['assemble', 'clean', 'sass', 'copy', 'cssmin','postcss']
       }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
 
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-postcss');
 
   grunt.loadNpmTasks('grunt-serve');
 
@@ -80,5 +105,5 @@ module.exports = function (grunt) {
   // (2) Cleans up previous build folder
   // (3)copies built site into build
 
-  grunt.registerTask('default', ['assemble', 'clean', 'copy', 'cssmin', 'watch'])
+  grunt.registerTask('default', ['assemble', 'clean', 'sass',  'copy', 'cssmin','postcss', 'watch'])
 }

@@ -1,0 +1,483 @@
+/*
+// AMANDAMCINTOSH.DESIGN
+// Last Updated on 1.31.18
+//
+// Pardon my dust, I'm still working on finishing this in my spare time!
+
+// BREAKPOINTS:
+// 650px - Medium
+// 500px - Small
+// 350px - X-Small
+
+Light green: #c8db77 rgb(200,219,119)
+Almost-black: #110300 rgb(17,3,0)
+Dark grey: #344238
+Darker grey: #1e3026
+
+Ratio based on the augmented fourth ratio:
+-------------
+2.827
+1.99
+1.414
+1
+.707
+.5
+.354
+*/
+$large: 900px;
+$medium: 650px;
+$small: 500px;
+$xsmall: 350px;
+
+$light-green:  #c8db77;
+$dark-grey: #344238;
+$darker-grey: #1e3026;
+$light-grey: #DDDDDD;
+
+$black: #110300;
+$trans-black: rgba(0,0,0,.1);
+$trans-white: rgba(255,255,255,.1);
+
+/* ============== */
+/* UTILITIES */
+/* ============== */
+
+
+/* ============== */
+/* RESETS */
+/* ============== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+/* ============== */
+/* BASE
+/* ============== */
+body {
+  font-size: 14px;
+  font-family: 'Quicksand', sans-serif;
+  color: $black;
+}
+
+h1 {
+  margin-bottom: .125rem;
+}
+/* ============== */
+/* LAYOUT
+/* ============== */
+.container {
+  width: 100%;
+
+  overflow: hidden;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+
+
+/* ============== */
+/* NAVIGATION
+/* ============== */
+header {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  background: $light-green;
+  padding: .354rem;
+
+  strong {
+    text-transform: lowercase;
+    @media screen and (max-width: $medium){
+      display:block
+    }
+  }
+
+  // Nav Contact
+  .nav-contact {
+    @media screen and (max-width: $small){
+      order: 1;
+    }
+    padding: .354rem .5rem;
+    position: absolute;
+    top: 2rem;
+    text-align: center;
+    background: $dark-grey;
+    color: white;
+    font-size: .707rem;
+
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // Social Media
+  .socials {
+    border-right: 1px solid white;
+    margin-right: .354rem;
+    padding-right: .354rem;
+    order: -1;
+
+    .triangle {
+      width: 0px;
+      height: 0px;
+      display: block;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid $dark-grey;
+      margin-top: -14px;
+      position: absolute;
+    }
+    // RESPONSIFY:
+    //border-top: 1px solid white;
+    //margin-top: .354rem;
+    //    svg {
+    //      width: 2rem;
+    //      margin: .25rem;
+    //    }
+
+    svg {
+      width: 1rem;
+      margin: .25rem;
+    }
+    svg * {
+      stroke: #FFF
+    }
+    svg:hover * {
+      fill: #FFF;
+      stroke: #000;
+    }
+  }
+
+
+  // Nav Links
+  nav {
+    li {
+      list-style: none
+    }
+    a {
+      padding: .24rem;
+      display: block;
+      color: $black;
+      font-weight: 500;
+      border-bottom: 2px solid transparent;
+
+      transition: all linear .25s;
+
+      &:hover {
+        color: $darker-grey;
+        border-bottom: 2px solid black;
+
+        transition: all linear .125s;
+      }
+    }
+    .link {
+      display: inline-block;
+    }
+    .dropdown {
+      display: none
+    }
+  }
+
+    @media screen and (max-width: $small) {
+    flex-flow: row wrap;
+    .nav-info, .nav-contact, nav {
+      position: static;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+/* ============== */
+/* PAGE: HOME
+/* ============== */
+.feature {
+  min-height: 85vh;
+
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-end;
+  padding: 1rem;
+  padding-top: 5rem;
+
+  background: #CCC;
+  background-image: url(../img/background.jpg);
+  background-size: cover;
+  background-position: left center;
+
+  font-size: 1rem;
+  text-align: left;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+.feature h1{
+  padding: 0;
+  margin: .125rem;
+}
+
+
+// TABBER
+//Page: Work
+.work {
+  width: 100%;
+}
+
+.tabber {
+  margin-bottom: 1rem;
+  text-align: center;
+
+  li {}
+  a {
+    color: $black;
+    margin: 1rem .354rem;
+    font-size:1rem;
+    vertical-align: bottom;
+    border-bottom: 2px solid rgba(200,200,200,0);
+    transition: all .5s linear;
+
+    &:hover{
+      border-color: rgba(200,200,200,1);
+      animation: text-pulse .5s infinite .5s ease-in-out alternate;
+    }
+
+    &.focused {
+      border-bottom: 2px solid $black;
+    }
+  }
+}
+.tab-container {
+  position:relative;
+  width: 75%;
+  height: 300px;
+  margin: auto;
+  overflow: hidden;
+}
+.tab {
+  display:flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: left .5s ease-in;
+
+  .piece {
+    width: 20vw;
+    height: 20vw;
+    margin:.354rem;
+
+    border: 1px solid black;
+    background: grey;
+
+    a {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    img {
+      width: 50%;
+    }
+  }
+}
+
+.tab.active {
+}
+
+//MAIN
+.me {
+  background: $light-grey;
+
+  .photo {
+    width:120px;
+    margin: 1rem auto 0;
+    text-align:center;
+    display: block
+  }
+
+  #intro {
+    max-width: 500px;
+    margin: auto
+  }
+
+  .proficiencies {
+    margin: auto;
+    width: 50%;
+    min-width: 300px;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .proficiencies ul{
+    padding: 0
+  }
+  .proficiencies li{
+    display: inline-block;
+    border: 1px solid black;
+    padding: .5rem;
+    margin-top: .5rem;
+  }
+}
+
+.portfolio, .contact {
+  min-height:200px;
+}
+
+// PORTFOLIO
+.portfolio {
+  background: $dark-grey;
+  color: white;
+}
+
+.contact {
+  display: flex;
+  flex-flow: row;
+  background: $darker-grey;
+  color: white;
+
+  &> div {
+    flex: 1;
+  }
+  .summary {
+  }
+  .form {
+    background: $black;
+  }
+}
+
+.footer {
+  background: $black;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  padding: 2rem 0;
+
+}
+
+  .contact-button {
+    font-family: 'Quicksand';
+    font-weight: 500;
+    text-shadow: none;
+    border: 0;
+    background: $light-green;
+    color: $black;
+    padding: .707rem 1.414rem;
+    margin: 1.414rem;
+  }
+
+/* ============== */
+/* PAGE: WORK
+/* ============== */
+.work {
+  h1, h2 {
+    text-align: center
+  }
+}
+.listing {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  .link {
+    flex: auto 30%;
+    width: 20vw;
+    height: 20vw;
+    border:1px solid black;
+    background: $light-grey;
+  }
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  img {
+    max-width: 75%;
+    max-height: 40%;
+  }
+}
+
+
+.project {
+  display: none;
+  width: 75%;
+  margin: auto;
+  clear: both;
+
+  &.open {
+    display: block;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin: 2rem 0 .5rem;
+    font-weight: 400;
+  }
+  h3 {
+    border-top: 1px solid black;
+    padding-top: .5rem;
+    margin-bottom: 1rem;
+  }
+  p {
+    float: left;
+    width: 60%;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+
+.logos {
+  width: 75%;
+  margin: auto;
+  text-align: center;
+
+  img {
+    max-width: 200px;
+    max-height: 100px;
+    padding: 20px;
+    margin: .125rem;
+    margin-right: 0;
+    border: solid 1px black;
+    transition: all .5s ease-in;
+
+    &:hover{
+      max-width: 225px;
+      max-height: 115px;
+      transition: all .5s ease-in;
+    }
+  }
+}
+/* ============== */
+/* ANIMATIONS
+/* ============== */
+@keyframes text-pulse {
+  0%      { border-color: rgba(200,200,200,1) }
+//  25%     { font-size: 2rem; }
+//  50%     { font-size: 1rem; }
+//  75%     { font-size: 2rem; }
+  100%    { border-color: $light-green; }
+}
