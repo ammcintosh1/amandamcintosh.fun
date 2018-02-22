@@ -32,5 +32,24 @@
     "piece": [
       {"title":"title","work":"url/for/work.png"},{"title":"title","work":"url/for/work.png"},{"title":"title","work":"url/for/work.png"}
       ]
+    }, {
+    "id":"fieldwork",
+    "company": "Fieldwork Potcast",
+    "logo": "fieldwork.png",
+    "summary": "Project: develop branding for an outdoors-focused podcast",
+    "description": "Verigo needed website maitenance as well as additional pages re-designed and developed. Working in-person with their team, I utilized their pre-existing web platform and styling to create a new home-page. I also designed custom icons and shot product photos.",
+    "piece": [
+      {"title":"title","work":"fieldwork-1.png"},{"title":"title","work":"fieldwork-3.png"},{"title":"title","work":"fieldwork-2.png"}
+      ]
+    }, {
+    "id":"scout",
+    "company": "Scout Adventure Hostel",
+    "logo": "scout.png",
+    "summary": "Project: develop branding for a hostel in Queens, Au",
+    "description": "Verigo needed website maitenance as well as additional pages re-designed and developed. Working in-person with their team, I utilized their pre-existing web platform and styling to create a new home-page. I also designed custom icons and shot product photos.",
+    "piece": [
+      {"title":"title","work":"scout-1.png"},
+      {"title":"title","work":"scout-2.png"},{"title":"title","work":"scout-3.png"},{"title":"title","work":"scout-4.png"}
+      ]
     }]
 }
