@@ -406,6 +406,8 @@ header {
     height: 20vw;
     border: 4px solid white;
     background: $light-grey;
+    overflow: hidden;
+    cursor: pointer;
   }
   a {
     display: flex;
@@ -413,6 +415,11 @@ header {
     align-items: center;
     width: 100%;
     height: 100%;
+
+    &:hover img {
+      transform: scale(2);
+      transition: all .25s ease-in-out;
+    }
   }
   img {
     max-width: 75%;
@@ -442,11 +449,22 @@ header {
     margin-bottom: 1rem;
   }
   p {
-    float: left;
-    width: 60%;
+    width: 75%;
   }
   img {
     max-width: 100%;
+  }
+
+  .summary {
+    h2 { text-align: left}
+    position: fixed;
+    width: 50%;
+    background: white;
+    padding: 2rem;
+    text-align: left;
+    box-shadow: 10px 5px 30px black;
+    left: 0;
+    top: 0;
   }
 }
 
