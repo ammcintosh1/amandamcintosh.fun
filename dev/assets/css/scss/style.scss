@@ -71,6 +71,30 @@ body {
 h1 {
   margin-bottom: .125rem;
 }
+
+a[class*='button']{
+  display: inline-block;
+  font-family: Quicksand;
+  font-weight: 500;
+  margin: 30px 10px;
+  padding: .707rem 1.414rem;
+  text-align: center;
+}
+.text-centered {
+  text-align: center
+}
+
+/* Buttons */
+.ghost-button {
+  background: $darker-grey;
+  border: 3px solid $light-green;
+  color: $light-green;
+}
+
+.button-top-border {
+  border-top: 3px solid #1e3026;
+  color: #1e3026;
+}
 /* ============== */
 /* LAYOUT
 /* ============== */
@@ -308,27 +332,43 @@ header {
 // Cuppa Joe
 .cuppa-joe {
   display: grid;
-  padding: 5%;
+  padding: 5% 0 5% 5%;
   overflow: hidden;
   align-items: center;
-  grid-template-rows: repeat(1, 200px);
+  grid-template-rows: repeat(1,200px);
   grid-auto-flow: column;
-  grid-auto-columns: 50%;
+  grid-auto-columns: 45%;
+  grid-column-gap: 10%;
   position: relative;
+  margin-bottom: 3rem;
 
   img {
     width: 100%;
   }
-  span {
+  p {
+    line-height: 1.25rem;
+    font-kerning: 20px;
+    font-style: italic;
+    margin-top: 1.25rem;
+    font-size: .75rem;
+  }
+  .cuppa-joe-label {
     position: absolute;
     right: 10%;
     background: white;
     padding: 2.5%;
+    display: inherit;
+    text-align: center;
   }
   #coffee-icon {
+    margin: auto;
     width: 100px;
+
     * {
       transition: all .125s ease-in-out;
+    }
+    &~.description {
+      opacity:0;
     }
   }
   #coffee-icon:hover {
@@ -337,6 +377,9 @@ header {
     }
     .rendered-icon {
       opacity: 0
+    }
+    &~.description {
+      opacity: 1;
     }
 
   }

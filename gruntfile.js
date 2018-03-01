@@ -106,4 +106,6 @@ module.exports = function (grunt) {
   // (3)copies built site into build
 
   grunt.registerTask('default', ['assemble', 'clean', 'sass',  'copy', 'cssmin','postcss', 'watch'])
+  grunt.registerTask('dev', ['watch'])
+
 }
