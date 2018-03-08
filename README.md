@@ -1,9 +1,13 @@
 # amandamcintosh.fun
 ##  The personal website of Amanda McIntosh
-                               
- 
-## DEPENDENCIES
-NPM
+TODO:
+* Write Readme -                            
+** Add Dependencies
+** Add Experimental projects
+** Design and build custom icons
+** Add Wordpress-based blog
+** Add TShirt ECommerce using Printful & Open Source platform
+
 
 <pre>
               .          -/OO\
