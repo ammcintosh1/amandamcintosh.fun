@@ -16,15 +16,14 @@
 
 <div class="listing">
   {{#each work.projects}}
-  <div class="link">
+  <div class="link" style="background:url(img/portfolio/thumb/{{id}}.png); background-repeat: none; background-size: cover">
     <a href="#{{id}}"><img src="img/logos/{{logo}}"></a>
   </div>
   {{/each}}
 </div>
-
-   <marquee>
-      color me beautiful
-   </marquee>
+<div class="projects-nav">
+  <button class='close'>Close</button>
+</div>
 {{#each work.projects}}
 <div id="{{id}}" class="project">
   <div class="summary">

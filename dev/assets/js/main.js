@@ -1,21 +1,62 @@
+$(document).ready(function(){
+
 // Background Loader
 // Do research on how to actually do this correctly, pls!
-$(document).ready(function(){
+
   $('.feature').css('background-image', 'url(./img/background.jpg)')
+
+// Scroll trigger
+// written on 3.1.18
+//let headHeight = parseInt($('header').outerHeight())
+//let breakPoint = 0;
+//let triggered = false;
+//
+//$(window).scroll(function(){
+//  if (breakPoint < window.pageYOffset && triggered == false){
+//    $('header').addClass('sticky')
+//    $('.container').css('padding-top',headHeight)
+//    triggered = true
+//  } else if (breakPoint >= window.pageYOffset && triggered == true) {
+//    $('header').removeClass('sticky')
+//    $('.container').css('padding-top',0)
+//
+//    triggered = false
+//  }
+//
+//})
+
 })
 
 // Portfolio Trigger
 // written on 2.2.18
 
 $('.listing .link a').on('click', function(e){
-  console.log(e)
   e.preventDefault()
 
   let id = $(this).attr('href')
-    console.log(id)
+  $('.projects h1').addClass('open-project')
+
+  $('.projects-nav').show()
 
   $('.open').removeClass('open')
+
   $('.project'+id).addClass('open')
+  $('.projects-nav').prependTo('.project.open .summary')
+
+  .animate({ scrollTop: $('.project.open').position().top+'px' }, "slow");
+})
+
+$('.projects-nav .close').on('click', function(e){
+  console.log('click!')
+
+  $('.projects h1').removeClass('open-project')
+
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+
+  setTimeout(function(){
+    $('.open').removeClass('open')
+    $('.projects-nav').hide()
+  }, 500)
 })
 // Simple TABBER
 // written on 1.31.18
