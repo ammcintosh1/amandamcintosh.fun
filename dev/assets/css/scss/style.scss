@@ -114,27 +114,31 @@ a[class*='button']{
 /* ============== */
 header {
   display: flex;
-  flex-flow: row;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
   background: $light-green;
   padding: .354rem;
+  position: absolute;
+  width: 100%;
 
-  strong {
-    text-transform: lowercase;
-    @media screen and (max-width: $medium){
+  @media screen and (max-width: $medium){
+    flex-flow: column;
+    text-align: center
+
+    strong {
+      text-transform: lowercase;
       display:block
-    }
+      }
   }
 
   // Nav Contact
   .nav-contact {
-    @media screen and (max-width: $small){
-      order: 1;
-    }
+    transition: all .5s ease;
     padding: .354rem .5rem;
     position: absolute;
     top: 2rem;
+    left: 0;
     text-align: center;
     background: $dark-grey;
     color: white;
@@ -144,6 +148,23 @@ header {
     flex-flow: row;
     align-items: center;
     justify-content: center;
+
+
+    @media screen and (max-width: $medium) {
+      width: 100%;
+      order: 2;
+      position: static;
+
+      .triangle {
+        display: none;
+        opacity: 0
+      }
+    }
+
+    @media screen and (max-width: $small){
+      order: 1;
+    }
+
   }
 
   // Social Media
@@ -212,7 +233,13 @@ header {
     .dropdown {
       display: none
     }
+    @media screen and (max-width: $medium){
+      margin: 10px auto;
+      font-size: 1rem;
+    }
   }
+
+
 
     @media screen and (max-width: $small) {
     flex-flow: row wrap;
@@ -224,6 +251,42 @@ header {
   }
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  justify-content: flex-end;
+  z-index: 100000;
+  margin-top: none;
+
+  .nav-info {
+    margin-top: -24px;
+    transition: all .5s ease
+  }
+  @media screen and (min-width: $medium){
+    .nav-info {
+      display:none;
+    }
+  }
+  .nav-contact {
+    top: 0;
+  }
+}
+
+@keyframes stickyanimation{
+  0% {
+    top:-200px;
+  }
+  100% {
+    top:0px
+  }
+}
+
+
+.container>.content {
+  padding-top: 100px;
+}
 /* ============== */
 /* PAGE: HOME
 /* ============== */
@@ -238,7 +301,7 @@ header {
   padding: 1rem;
   padding-top: 5rem;
 
-  background: #CCC;
+  background: rgba(10,10,10,1);
   background-attachment: fixed;
   background-image: url(../img/background.jpg);
   background-size: cover;
@@ -248,6 +311,9 @@ header {
   text-align: left;
   color: white;
   text-shadow: 2px 2px black;
+  @media screen and (max-width: $small){
+    text-align: center
+  }
 }
 
 .feature h1{
@@ -341,6 +407,23 @@ header {
   grid-column-gap: 10%;
   position: relative;
   margin-bottom: 3rem;
+  @media screen and (max-width: $medium){
+      grid-template-rows: repeat(1,300px);
+    a {
+      margin: 30px 0px
+    }
+  }
+
+  @media screen and (max-width: $small){
+    display: flex;
+    flex-flow: column;
+    /* justify-content: center; */
+    align-items: center;
+    img {
+      order: -1;
+      max-height: 200px
+    }
+  }
 
   img {
     width: 100%;
@@ -359,6 +442,10 @@ header {
     padding: 2.5%;
     display: inherit;
     text-align: center;
+    @media screen and (max-width: $small){
+      display: inline-grid;
+      right: unset
+    }
   }
   #coffee-icon {
     margin: auto;
@@ -481,6 +568,13 @@ header {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  overflow: hidden;
+  margin-top: 0;
+  z-index: 0;
+  margin-bottom: 100px;
+  @media (max-width:$medium){
+    margin-top: 50px;
+  }
   .link {
     flex: auto 30%;
     width: 20vw;
@@ -489,6 +583,17 @@ header {
     background: $light-grey;
     overflow: hidden;
     cursor: pointer;
+
+    @media (max-width:$large) {
+      flex: 1 30vw;
+      height: 30vw;
+    }
+
+    @media (max-width:$medium){
+      flex: 1 40vw;
+      height: 30vw;
+    }
+
   }
   a {
     display: flex;
@@ -507,16 +612,53 @@ header {
     max-height: 40%;
   }
 }
+.projects-nav {
+    display: none;
 
+  .close {
+    border: 2px solid black;
+    padding: 1rem;
+
+    @media screen and (max-width: $small) {
+
+    }
+  }
+}
+
+.projects{
+  h1{
+    margin-top: 75px;
+    transition: all 1s ease;
+
+    @media screen and (min-width: $medium){
+      margin-top: 0;
+    }
+
+    &.open-project {
+      margin-top: -35vw;
+      @media screen and (max-width: $large){
+        margin-top: -80vw;
+      }
+      @media screen and (max-width: $medium){
+        margin-top: -120vw;
+      }
+      @media screen and (max-width: $small){
+        margin-top: -120vw;
+      }
+    }
+  }
+}
 
 .project {
   display: none;
   width: 75%;
   margin: auto;
+  margin-bottom: 100px;
   clear: both;
 
   &.open {
     display: block;
+    margin-top: 150px;
   }
 
   h2 {
@@ -537,15 +679,30 @@ header {
   }
 
   .summary {
+    margin-bottom: 60px;
     h2 { text-align: left}
-    position: fixed;
-    width: 50%;
-    background: white;
-    padding: 2rem;
-    text-align: left;
-    box-shadow: 10px 5px 30px black;
-    left: 0;
-    top: 0;
+// Uncomment out when sticky summaries are fixed - 3-1-18
+//    position: fixed;
+//    width: 50%;
+//    background: white;
+//    padding: 2rem;
+//    text-align: left;
+//    box-shadow: 10px 5px 30px black;
+//    left: 0;
+//    top: 0;
+  }
+
+    @media screen and (max-width: $small){
+    width: 95%;
+
+    .summary {
+      width: 75%;
+      margin: auto;
+      margin-bottom: 25px;
+    }
+    p {
+      width: 100%;
+    }
   }
 }
 

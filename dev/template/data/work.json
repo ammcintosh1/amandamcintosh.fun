@@ -35,7 +35,7 @@
     "company": "Scout Adventure Hostel",
     "logo": "scout.png",
     "summary": "Project: develop branding for a hostel in Queens, Au",
-    "description": "Verigo needed website maitenance as well as additional pages re-designed and developed. Working in-person with their team, I utilized their pre-existing web platform and styling to create a new home-page. I also designed custom icons and shot product photos.",
+    "description": "Scout Adventure Hostel needed branding that was colorful, approachable and friendly for all ages. ",
     "piece": [
       {"title":"title","work":"scout-1.png"},
       {"title":"title","work":"scout-2.png"},{"title":"title","work":"scout-3.png"},{"title":"title","work":"scout-4.png"}
@@ -49,17 +49,6 @@
     "piece": [
       {"title":"title","work":"fta-1.png"},
       {"title":"title","work":"fta-2.png"},{"title":"title","work":"fta-3.png"}
-      ]
-    }, {
-    "id":"artalivedesign",
-    "company": "Art Alive Design",
-    "logo": "artalivedesign.png",
-    "summary": "Project: develop sales & support material for PX-80.",
-    "tools": "Adobe Creative Suite",
-    "website": "verigo.io",
-    "description": "As a personal project, I worked on a design for a freelance web design business. I started with a mobile design and expanded it to a desktop design while maintaining the same user experience. The design features prominent, invited CTAs intended to efficiently funnel the user into the sales pipeline. This is project is a work-in-progress; I hope to complete development side of things soon!",
-    "piece": [
-      {"title":"title","work":"url/for/work.png"},{"title":"title","work":"url/for/work.png"},{"title":"title","work":"url/for/work.png"}
       ]
     }]
 }
