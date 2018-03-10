@@ -475,6 +475,7 @@ header {
 //MAIN
 .me {
   background: $light-grey;
+  padding: 5% 0;
 
   .photo {
     width:120px;
@@ -533,6 +534,9 @@ header {
   }
 }
 
+
+
+
 .footer {
   background: $black;
   color: #fff;
@@ -555,6 +559,39 @@ header {
     padding: .707rem 1.414rem;
     margin: 1.414rem;
   }
+
+/* ============== */
+/* PAGE: CONTACT
+/* ============== */
+.contact-form-container {
+  margin-bottom: 2rem;
+  text-align: center;
+  .form-field {
+    margin: 1rem auto;
+  }
+  h3 {
+    margin-bottom: .25rem;
+    font-weight: 500;
+  }
+  button {
+    background: rgb(255, 128, 74);
+    border: 0;
+    color: white;
+    padding: .75rem 1.5rem;
+    outline: none;
+    width: 100%;
+  }
+  form {
+    width: 400px;
+    margin: auto;
+  }
+  input,
+  textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid rgba(0,0,0,.25)
+  }
+}
 
 /* ============== */
 /* PAGE: WORK
@@ -680,6 +717,7 @@ header {
 
   .summary {
     margin-bottom: 60px;
+
     h2 { text-align: left}
 // Uncomment out when sticky summaries are fixed - 3-1-18
 //    position: fixed;
