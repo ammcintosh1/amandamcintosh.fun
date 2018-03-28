@@ -1,0 +1,78 @@
+{
+  "jobs": [
+    {
+      "company": "Paracosm",
+      "website":"paracosm.io",
+      "start": "Jan 2015",
+      "end": "Jan 2018",
+      "role": "Front-End Web Developer & Graphic Designer",
+      "summary": "",
+      "tasks": [
+        "Design and develop the GUI for a mobile web app using Javascript/JQuery & HTML/SCSS",
+        "Re-envision and define company-wide branding",
+        "Create collateral for pitch decks",
+        "Design, mock-up, and create conversion-focused landing pages using Adobe Photoshop and HubSpot",
+        "Design, mock-up. and develop static web content using Webflow",
+        "Create illustrations for social media, pitch decks and other company branding needs"
+      ]
+    }, {
+      "company": "EStar America",
+      "website":"",
+      "start": "Aug 2014",
+      "end": "Aug 2015",
+      "role": "Front-End Web Developer & Graphic Designer",
+      "summary": "",
+      "tasks": [
+        "Conceptualized and designed product packaging for consumer electronics products",
+        "Designed, edited and illustrated users manuals for products in Adobe Illustrator",
+        "Took high-quality product photos for use on packaging materials and in web marketing",
+        "Designed and carried out advertising campaigns for products on social media ad platforms and Google Ad Words",
+        "Created booth collateral for company booth, then served on a team of company spokespersons at CES2015.",
+        "Worked with a design and marketing team to develop company store using BigCommerce."
+      ]
+    }, {
+      "company": "Bit Cauldron Corporation",
+      "website":"",
+      "start": "Dec 2012",
+      "end": "Aug 2014",
+      "role": "Web Designer & Graphic Designer",
+      "summary": "",
+      "tasks": [
+        "Translated management's vision into high-quality, compelling pitch decks",
+        "Provided objective feedback on design-related projects and company image",
+        "Modified audio and visual files using After Effects, Premier and Audition to create company demos",
+        "Worked in a high-stress atmosphere to meet tight deadlines",
+        "Designed a mockup for an android audio player application"
+      ]
+    }, {
+      "company": "",
+      "website":"",
+      "start": "",
+      "end": "",
+      "role": "",
+      "summary": "",
+      "tasks": [
+        "",
+        ""
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "University of Florida",
+      "degree": "Bachelor's Degree, Health Sciences",
+      "start": "Fall 2013",
+      "end": "Spring 2015",
+      "gpa": "3.75",
+      "location:": "Gainesville, Fl"
+    },
+    {
+      "school": "Santa Fe College",
+      "degree": "Associates of Arts Degree",
+      "start": "Fall 2011",
+      "end": "Spring 2013",
+      "gpa": "3.95",
+      "location:": "Gainesville, Fl"
+    }
+  ]
+}
