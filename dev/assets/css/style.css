@@ -285,7 +285,7 @@ header {
   padding: 5% 0 5% 5%;
   overflow: hidden;
   align-items: center;
-  grid-template-rows: repeat(1, 200px);
+  grid-template-rows: repeat(1, 300px);
   grid-auto-flow: column;
   grid-auto-columns: 45%;
   grid-column-gap: 10%;
@@ -426,6 +426,16 @@ header {
     width: 100%;
     padding: 5px;
     border: 1px solid rgba(0, 0, 0, 0.25); }
+
+.form-loader {
+  width: 100%;
+  background: rgba(244, 244, 1, 0.5);
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center; }
 
 /* ============== */
 /* PAGE: WORK

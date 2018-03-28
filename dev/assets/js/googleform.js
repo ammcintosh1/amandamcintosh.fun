@@ -3,7 +3,7 @@
 
 let request;
 
-$('#foo').submit(function(event){
+$('#contact-form').submit(function(event){
 
   // Abort any pending requests
   if (request){
@@ -33,6 +33,14 @@ $('#foo').submit(function(event){
     console.log(response)
     console.log(textStatus)
     console.log(jqXHR)
+    $('#contact-form').prepend('<div class="form-loader"></div>')
+    $('.form-loader').height($('#contact-form').height())
+    $('.form-loader').append('<h2>Sending your message!</h2>')
+
+    setTimeout(function(){
+    $('#contact-form').remove()
+    $('.contact-form-container').prepend('<h1>Thanks!</h1>')
+    },3000)
   })
 
   // Failure
@@ -43,7 +51,7 @@ $('#foo').submit(function(event){
   request.always(function(){
     inputs.prop("disabled", false)
     console.log('test')
-//    window.location = 'http://amandamcintosh.design/contact.html'; //redirect
+    //window.location = 'http://amandamcintosh.design/contact.html'; //redirect
   })
 
   event.preventDefault()
