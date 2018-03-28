@@ -241,6 +241,20 @@ function projectControls() {
 }
 
 
+// Toggle Jobs
+// Written 3-27-18
+if ('.job'){
+  $('.job').each(function(){
+    let el = $(this)
+    let details = el.children('.details')
+    details.hide()
+    el.on('click', function(){
+      details.toggle()
+      el.toggleClass('active')
+    })
+  })
+}
+
 //  var dropdown = $(this).next('.dropdown'),
 //      hovering = 0
 //  dropdown.show()

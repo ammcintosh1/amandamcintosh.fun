@@ -407,6 +407,33 @@ header {
   max-width: 50%;
   margin: auto; }
 
+.job {
+  border: 1px solid #000;
+  margin: .5rem 1rem 1rem 2rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: background .15s ease; }
+
+.job:not(.active):hover {
+  cursor: pointer;
+  background: #c8db77;
+  color: white;
+  transition: background .5s ease; }
+  .job:not(.active):hover h3 a {
+    color: white; }
+
+.job h3 a {
+  color: #344238; }
+
+.job .details li {
+  list-style: none;
+  margin-top: .125rem;
+  margin-left: 1rem;
+  padding: .25rem;
+  padding-left: 0;
+  font-size: .75rem;
+  border-bottom: 1px solid #CCC; }
+
 /* ============== */
 /* PAGE: CONTACT
 /* ============== */
