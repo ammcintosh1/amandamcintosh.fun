@@ -401,6 +401,13 @@ header {
   margin: 1.414rem; }
 
 /* ============== */
+/* PAGE: RESUME
+/* ============== */
+.resume {
+  max-width: 50%;
+  margin: auto; }
+
+/* ============== */
 /* PAGE: CONTACT
 /* ============== */
 .contact-form-container {
