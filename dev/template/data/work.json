@@ -50,5 +50,16 @@
       {"title":"title","work":"fta-1.png"},
       {"title":"title","work":"fta-2.png"},{"title":"title","work":"fta-3.png"}
       ]
+    }, {
+    "id":"amazingcravings",
+    "company": "Amazing Cravings",
+    "logo": "amazingcravings.png",
+    "summary": "Branding for a fruits, nuts, and candies company",
+    "description": "Amazing Cravings is a web-based botique snack company. They needed a logo that could be used on their packaging, that looked simple and professional. Because they initially didn't know what style they wanted to pursue in their branding, created a range of styles for them to choose from. I created high-resolution, custom imagery for them from stock photos for use in their logo, as well as diverse selection of logo variations.",
+    "piece": [
+      {"title":"title","work":"ac-1.png"},
+      {"title":"title","work":"ac-2.png"},{"title":"title","work":"ac-3.png"},
+      {"title":"title","work":"ac-4.png"}
+      ]
     }]
 }
