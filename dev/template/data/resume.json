@@ -60,7 +60,7 @@
   "education": [
     {
       "school": "University of Florida",
-      "website": "",
+      "website": "http://www.ufl.edu/",
       "degree": "Bachelor's Degree, Health Sciences",
       "start": "Fall 2013",
       "end": "Spring 2015",
@@ -70,7 +70,7 @@
     },
     {
       "school": "Santa Fe College",
-      "website": "",
+      "website": "https://www.sfcollege.edu/",
       "degree": "Associates of Arts Degree",
       "start": "Fall 2011",
       "end": "Spring 2013",

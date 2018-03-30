@@ -33,13 +33,13 @@ $('#contact-form').submit(function(event){
     console.log(response)
     console.log(textStatus)
     console.log(jqXHR)
-    $('#contact-form').prepend('<div class="form-loader"></div>')
-    $('.form-loader').height($('#contact-form').height())
-    $('.form-loader').append('<h2>Sending your message!</h2>')
+    $('#contact-form').prepend('<div class="form-submit-message"></div>')
+    $('.form-submit-message').height($('#contact-form').height())
+    $('.form-submit-message').append('<h2>Sending your message!</h2>')
 
     setTimeout(function(){
     $('#contact-form').remove()
-    $('.contact-form-container').prepend('<h1>Thanks!</h1>')
+    $('.contact-form-container').prepend('<h1>Thanks!</h1><a href="index.html" class="button">&lt; Back to the Homepage</a>')
     },3000)
   })
 

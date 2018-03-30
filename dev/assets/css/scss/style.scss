@@ -43,6 +43,22 @@ $trans-white: rgba(255,255,255,.1);
 /* ============== */
 
 
+.grey {
+  background: $light-grey;
+  padding: 5% 0;
+}
+
+.padding {
+  padding: 2rem;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+.centered {
+  margin: auto
+}
 /* ============== */
 /* RESETS */
 /* ============== */
@@ -88,8 +104,20 @@ a[class*='button']{
   padding: .707rem 1.414rem;
   text-align: center;
 }
-.text-centered {
-  text-align: center
+
+a, button {
+  transition: all .25s ease;
+}
+a:hover, button:hover{
+  transform: scale(1.075);
+  transition: all .25s ease;
+}
+a:active, button:active{
+  transform: scale(.95);
+}
+
+button, input, optgroup, select, textarea {
+  font-family: "PT Sans", sans-serif
 }
 
 /* Buttons */
@@ -247,7 +275,14 @@ header {
       font-size: 1rem;
     }
   }
-
+.nav-info {
+    p {
+    line-height: 0;
+    font-kerning: 0;
+    margin-top: 0;
+    font-size: .75rem;
+  }
+}
 
 
     @media screen and (max-width: $small) {
@@ -257,17 +292,17 @@ header {
       width: 100%;
       text-align: center;
     }
+      .nav-info p {
+        text-align: center;
+        line-height: 1rem;
+        strong {
+          display: block;
+        }
+      }
   }
 }
 
-.nav-info {
-    p {
-    line-height: 0;
-    font-kerning: 0;
-    margin-top: 0;
-    font-size: .75rem;
-  }
-}
+
 
 .sticky {
   position: fixed;
@@ -310,6 +345,10 @@ header {
 /* ============== */
 /* PAGE: HOME
 /* ============== */
+.home .container>.content {
+  padding-bottom: 0
+}
+
 .feature {
   min-height: 85vh;
 
@@ -496,7 +535,7 @@ header {
 }
 
 //MAIN
-.me {
+#me {
   background: $light-grey;
   padding: 5% 0;
 
@@ -569,6 +608,9 @@ header {
   flex-flow: column;
   padding: 2rem 0;
 
+  p {
+    margin: 0 auto
+  }
 }
 
   .contact-button {
@@ -676,12 +718,11 @@ header {
   }
   .form-field input::placeholder,
   .form-field textarea::placeholder{
-    padding: 1.5rem;
     padding-left: 0;
     font-size: 1rem;
-    color: $light-grey
+    color: $darker-grey
   }
-  input:placeholder-shown
+  input:placeholder-shown{}
   button {
     background: rgb(255, 128, 74);
     border: 0;
@@ -689,6 +730,7 @@ header {
     padding: .75rem 1.5rem;
     outline: none;
     width: 100%;
+    font-size: 1.125rem;
   }
   form {
     width: 400px;
@@ -700,11 +742,17 @@ header {
     padding: 5px;
     border: 1px solid rgba(0,0,0,.25)
   }
+  @media screen and (max-width: $small) {
+  padding: 0 1.5rem;
+  form {
+      width: 100%;
+    }
+  }
 }
 
-.form-loader{
+.form-submit-message{
   width: 100%;
-  background: rgba(244, 244, 1, 0.5);
+  background: rgba(255, 255, 255, 0.5);
   position: absolute;
   left: 0;
   display: flex;
@@ -714,6 +762,15 @@ header {
 
 }
 
+/*
+button[type="submit"]{
+  width: 100%;
+  padding: 1rem;
+  background: rgb(255, 206, 58);
+  border: 0;
+  color: white;
+}
+*/
 /* ============== */
 /* PAGE: WORK
 /* ============== */
