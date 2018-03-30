@@ -11,30 +11,36 @@ title: Amanda McIntosh | Resume
     {{#each resume.jobs}} {{#if company }} <!-- Test to see if contains data; leaves placeholder JSON available -->
     <div class="job">
       <div class="summary">
-        <h3><a href="{{website}}">{{company}}</a></h3>
+        <h3>{{company}}</h3>
         <span class="date">{{start}} – {{end}}</span>
         <p class="role">{{role}}</p>
 
       </div>
       <div class="details">
+        <a href="{{website}}">{{website}}</a>
         <ul>
           {{#each tasks}}
           <li>{{this}}</li>
           {{/each}}
         </ul>
       </div>
+      <span class="indicator">
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="27.8" viewBox="0 0 50 20"><path fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" d="M2 2l23 23L48 2"/></svg>
+      </span>
     </div>
     {{/if}} {{/each}}
   </div>
   <div class="education">
     <h2>Education</h2>
     {{#each resume.education}}
-      <p class="school">
-        <span class="name">{{school}}</span>
-        <span class="date">{{start}} - {{end}}</span>
-        <span class="location">{{location}}</span>
-        <span class="gpa">{{gpa}}</span>
-      </p>
+      <div class="school" style="background-image: url({{background-img}})">
+        <a href="{{website}}">
+          <h3 class="name">{{school}}</h3>
+          <span class="date">{{start}} - {{end}}</span>
+          <span class="location">{{location}}</span>
+          <span class="gpa">{{gpa}}</span>
+        </a>
+      </div>
 
     {{/each}}
   </div>

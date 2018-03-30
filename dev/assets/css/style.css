@@ -43,15 +43,22 @@ a {
 /* ============== */
 body {
   font-size: 14px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'PT Sans', sans-serif;
   color: #110300; }
 
 h1 {
   margin-bottom: .125rem; }
 
+p {
+  font-family: 'Quicksand';
+  line-height: 1.25rem;
+  font-kerning: 20px;
+  margin-top: 1.25rem;
+  font-size: .75rem; }
+
 a[class*='button'] {
   display: inline-block;
-  font-family: Quicksand;
+  font-family: 'PT Sans';
   font-weight: 500;
   margin: 30px 10px;
   padding: .707rem 1.414rem;
@@ -111,7 +118,8 @@ header {
     display: flex;
     flex-flow: row;
     align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    display: none; }
     @media screen and (max-width: 650px) {
       header .nav-contact {
         width: 100%;
@@ -174,6 +182,12 @@ header {
         width: 100%;
         text-align: center; } }
 
+.nav-info p {
+  line-height: 0;
+  font-kerning: 0;
+  margin-top: 0;
+  font-size: .75rem; }
+
 .sticky {
   position: fixed;
   top: 0;
@@ -184,7 +198,7 @@ header {
   margin-top: none; }
   .sticky .nav-info {
     margin-top: -24px;
-    transition: all 0.5s ease; }
+    transition: all .5s ease; }
   @media screen and (min-width: 650px) {
     .sticky .nav-info {
       display: none; } }
@@ -197,7 +211,8 @@ header {
   100% {
     top: 0px; } }
 .container > .content {
-  padding-top: 100px; }
+  padding-top: 100px;
+  padding-bottom: 100px; }
 
 /* ============== */
 /* PAGE: HOME
@@ -211,7 +226,7 @@ header {
   align-content: flex-end;
   padding: 1rem;
   padding-top: 5rem;
-  background: #0a0a0a;
+  background-color: #0a0a0a;
   background-attachment: fixed;
   background-image: url(../img/background.jpg);
   background-size: cover;
@@ -225,8 +240,11 @@ header {
       text-align: center; } }
 
 .feature h1 {
+  font-weight: 300;
+  max-width: 400px;
   padding: 0;
-  margin: .125rem; }
+  margin: .125rem;
+  text-align: center; }
 
 .work {
   width: 100%; }
@@ -359,7 +377,6 @@ header {
     padding: 0; }
   .me .proficiencies li {
     display: inline-block;
-    border: 1px solid black;
     padding: .5rem;
     margin-top: .5rem; }
 
@@ -391,7 +408,7 @@ header {
   padding: 2rem 0; }
 
 .contact-button {
-  font-family: 'Quicksand';
+  font-family: 'PT Sans';
   font-weight: 500;
   text-shadow: none;
   border: 0;
@@ -407,11 +424,12 @@ header {
   max-width: 50%;
   margin: auto; }
 
-.job {
+.job, .school a {
   border: 1px solid #000;
   margin: .5rem 1rem 1rem 2rem;
   padding: 1rem 2rem;
   cursor: pointer;
+  display: block;
   transition: background .15s ease; }
 
 .job:not(.active):hover {
@@ -421,6 +439,9 @@ header {
   transition: background .5s ease; }
   .job:not(.active):hover h3 a {
     color: white; }
+
+.job {
+  position: relative; }
 
 .job h3 a {
   color: #344238; }
@@ -434,6 +455,33 @@ header {
   font-size: .75rem;
   border-bottom: 1px solid #CCC; }
 
+.job .indicator {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  transition: height 1s ease, stroke .5s ease; }
+  .job .indicator svg {
+    width: 50px;
+    padding: 10px; }
+
+.job.active .indicator {
+  transform: rotate(180deg); }
+
+.job.active:hover .indicator {
+  height: 25%; }
+
+.job.active:hover .indicator path {
+  stroke: #000; }
+
+.role {
+  margin-top: 0; }
+
+.school .name {
+  display: block; }
+
 /* ============== */
 /* PAGE: CONTACT
 /* ============== */
@@ -444,8 +492,18 @@ header {
     margin: 1rem auto; }
   .contact-form-container h3 {
     margin-bottom: .25rem;
-    font-weight: 500; }
-  .contact-form-container button {
+    font-weight: 500;
+    color: #DDDDDD;
+    text-align: left;
+    font-size: 1.5rem; }
+  .contact-form-container .form-field input::placeholder,
+  .contact-form-container .form-field textarea::placeholder {
+    padding: 1.5rem;
+    padding-left: 0;
+    font-size: 1rem;
+    color: #DDDDDD; }
+  .contact-form-container input:placeholder-shown
+  button {
     background: #ff804a;
     border: 0;
     color: white;
@@ -493,7 +551,7 @@ header {
     width: 20vw;
     height: 20vw;
     border: 4px solid white;
-    background: #DDDDDD;
+    background-color: #DDDDDD;
     overflow: hidden;
     cursor: pointer; }
     @media (max-width: 900px) {

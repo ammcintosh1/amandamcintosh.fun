@@ -64,7 +64,7 @@ a {
 /* ============== */
 body {
   font-size: 14px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'PT Sans', sans-serif;
   color: $black;
 }
 
@@ -72,9 +72,17 @@ h1 {
   margin-bottom: .125rem;
 }
 
+p {
+  font-family: 'Quicksand';
+  line-height: 1.25rem;
+  font-kerning: 20px;
+  margin-top: 1.25rem;
+  font-size: .75rem;
+}
+
 a[class*='button']{
   display: inline-block;
-  font-family: Quicksand;
+  font-family: 'PT Sans';
   font-weight: 500;
   margin: 30px 10px;
   padding: .707rem 1.414rem;
@@ -134,6 +142,7 @@ header {
 
   // Nav Contact
   .nav-contact {
+
     transition: all .5s ease;
     padding: .354rem .5rem;
     position: absolute;
@@ -149,7 +158,7 @@ header {
     align-items: center;
     justify-content: center;
 
-
+   display:none; // Hiding for laughs
     @media screen and (max-width: $medium) {
       width: 100%;
       order: 2;
@@ -251,6 +260,15 @@ header {
   }
 }
 
+.nav-info {
+    p {
+    line-height: 0;
+    font-kerning: 0;
+    margin-top: 0;
+    font-size: .75rem;
+  }
+}
+
 .sticky {
   position: fixed;
   top: 0;
@@ -261,9 +279,10 @@ header {
   margin-top: none;
 
   .nav-info {
-    margin-top: -24px;
-    transition: all .5s ease
-  }
+  margin-top: -24px;
+  transition: all .5s ease;
+}
+
   @media screen and (min-width: $medium){
     .nav-info {
       display:none;
@@ -286,6 +305,7 @@ header {
 
 .container>.content {
   padding-top: 100px;
+  padding-bottom: 100px;
 }
 /* ============== */
 /* PAGE: HOME
@@ -301,7 +321,7 @@ header {
   padding: 1rem;
   padding-top: 5rem;
 
-  background: rgba(10,10,10,1);
+  background-color: rgba(10,10,10,1);
   background-attachment: fixed;
   background-image: url(../img/background.jpg);
   background-size: cover;
@@ -317,8 +337,11 @@ header {
 }
 
 .feature h1{
+  font-weight: 300;
+  max-width: 400px;
   padding: 0;
   margin: .125rem;
+  text-align: center;
 }
 
 
@@ -502,7 +525,6 @@ header {
   }
   .proficiencies li{
     display: inline-block;
-    border: 1px solid black;
     padding: .5rem;
     margin-top: .5rem;
   }
@@ -550,7 +572,7 @@ header {
 }
 
   .contact-button {
-    font-family: 'Quicksand';
+    font-family: 'PT Sans';
     font-weight: 500;
     text-shadow: none;
     border: 0;
@@ -568,11 +590,12 @@ header {
   margin: auto;
 }
 
-.job {
+.job, .school a{
   border: 1px solid #000;
   margin: .5rem 1rem 1rem 2rem;
   padding: 1rem 2rem;
   cursor: pointer;
+  display: block;
   transition: background .15s ease;
 }
 .job:not(.active):hover {
@@ -584,6 +607,10 @@ header {
   h3 a {
     color: white;
   }
+}
+
+.job {
+  position: relative;
 }
 
 .job h3 a {
@@ -598,6 +625,39 @@ header {
   font-size: .75rem;
   border-bottom: 1px solid #CCC;
 }
+
+.job .indicator {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  transition: height 1s ease, stroke .5s ease;
+  svg {
+    width: 50px;
+    padding: 10px;
+  }
+}
+.job.active .indicator {
+  transform: rotate(180deg)
+}
+.job.active:hover .indicator {
+  height: 25%;
+}
+.job.active:hover .indicator path {
+  stroke: #000;
+}
+
+.role {
+  margin-top: 0;
+}
+
+
+
+.school .name {
+  display: block;
+}
 /* ============== */
 /* PAGE: CONTACT
 /* ============== */
@@ -610,7 +670,18 @@ header {
   h3 {
     margin-bottom: .25rem;
     font-weight: 500;
+    color: $light-grey;
+    text-align: left;
+    font-size: 1.5rem;
   }
+  .form-field input::placeholder,
+  .form-field textarea::placeholder{
+    padding: 1.5rem;
+    padding-left: 0;
+    font-size: 1rem;
+    color: $light-grey
+  }
+  input:placeholder-shown
   button {
     background: rgb(255, 128, 74);
     border: 0;
@@ -667,7 +738,7 @@ header {
     width: 20vw;
     height: 20vw;
     border: 4px solid white;
-    background: $light-grey;
+    background-color: $light-grey;
     overflow: hidden;
     cursor: pointer;
 
